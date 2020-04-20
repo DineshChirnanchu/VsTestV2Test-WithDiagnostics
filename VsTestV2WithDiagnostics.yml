@@ -14,7 +14,9 @@ jobs:
   - task: VSTest@2
     inputs:  
       testSelector: 'testAssemblies'     
-      testAssemblyVer2: '**/*StackOverflow*.dll'
+      testAssemblyVer2: |
+        **\*StackOverflow*.dll
+        !**\\obj\\**
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
       vsTestVersion: 'toolsInstaller'
       diagnosticsEnabled: true
