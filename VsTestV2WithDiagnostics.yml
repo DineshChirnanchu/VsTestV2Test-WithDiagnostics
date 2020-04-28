@@ -1,7 +1,5 @@
 # The objective is to perform VSTESTV2 with Diagnostics
 
-trigger:
-- master
 jobs:
 - job: RunTest4
   displayName: 'Run Tests'
@@ -16,7 +14,7 @@ jobs:
       testSelector: 'testAssemblies'     
       testAssemblyVer2: |
         **\*StackOverflow*.dll
-        !**\\obj\\**
+        !**\obj\**
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
       vsTestVersion: 'toolsInstaller'
       diagnosticsEnabled: true
